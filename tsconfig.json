@@ -16,5 +16,16 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "target": "es2017",
+      "esModuleInterop": true,
+      // "baseUrl": "./"
+    }
+  }
 }

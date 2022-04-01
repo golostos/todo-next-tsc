@@ -1,0 +1,11 @@
+server {
+    listen       ${NGINX_PORT};
+    server_name  ${NGINX_HOST};
+    location / {
+        proxy_pass ${PROXY_URL_NEXT};
+    }
+
+    location /api {
+        proxy_pass ${PROXY_URL_API};
+    }
+}

@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/task
+Content-Type: application/json
+
+{
+    "name": "Learn JS",
+    "done": true
+}
