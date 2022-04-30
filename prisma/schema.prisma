@@ -11,11 +11,14 @@ datasource db {
 }
 
 model Task {
-  id        String   @id @default(cuid())
-  name      String
-  done      Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String    @id @default(cuid())
+  name       String
+  done       Boolean   @default(false)
+  archived   Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  archivedAt DateTime?
+  doneAt     DateTime?
 }
 
 // model Session {
@@ -34,15 +37,15 @@ model Task {
 //   name          String?
 //   passwordHash  String
 //   email         String      @unique
-//   emailVerified DateTime?
+//   // emailVerified DateTime?
 //   phone         String?
-//   image         String?
-//   role          Role        @default(USER)
-//   status        Status      @default(ACTIVE)
+//   // image         String?
+//   // role          Role        @default(USER)
+//   // status        Status      @default(ACTIVE)
 //   // accounts      Account[]
-//   sessions      Session[]
+//   // sessions      Session[]
 //   userAbilityId String
-//   userAbility   UserAbility @relation(fields: [userAbilityId], references: [id], onDelete: Cascade)
+//   // userAbility   UserAbility @relation(fields: [userAbilityId], references: [id], onDelete: Cascade)
 //   createdAt     DateTime    @default(now())
 //   updatedAt     DateTime    @updatedAt
 // }
